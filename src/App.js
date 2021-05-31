@@ -11,6 +11,7 @@ function App() {
   const resultItems = results
   .map(result => (
     <ResultItem 
+      index={result.index}
       key={result.id} 
       name={result.business} 
       address={result.address} 
@@ -29,8 +30,9 @@ function App() {
       }
     })
     .then((res) => {
-      let topTen = res.data["businesses"].slice(0, 10)
-      let converted = topTen.map(r => ({ 
+      let topTen = res.data["businesses"].slice(0, 20)
+      let converted = topTen.map((r, index) => ({ 
+          index: index,
           id: r['id'], 
           business: r['name'], 
           address: r['location']['address1'], rating: r['rating']
@@ -47,12 +49,11 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <h1>Nearby</h1>
         <SearchBar search={search} />
 
-        <ul>
+        <div>
           {resultItems}
-        </ul>
+        </div>
 
       </header>
     </div>

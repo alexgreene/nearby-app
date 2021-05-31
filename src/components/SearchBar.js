@@ -28,30 +28,34 @@ function SearchBar(props) {
   }
 
   return (
-    <form onSubmit={handleSearch}>
-      <input
-        type="text"
-        id="search-query-input"
-        className="input input__lg"
-        name="text"
-        autoComplete="off"
-        value={query}
-        onChange={handleQueryChange}
-        placeholder="query"
-      />
-      <input
-        type="text"
-        id="search-location-input"
-        className="input input__lg"
-        name="location"
-        autoComplete="off"
-        value={location}
-        onChange={handleLocationChange}
-        placeholder="location"
-      />
-      <button type="submit" className="btn btn__primary btn__lg">
-        Search
-      </button>
+    <form className="" onSubmit={handleSearch}>
+      <div className="flex">
+        <div className="searchTitle">Search</div>
+        <input
+          type="text"
+          id="searchLocationInput"
+          name="location"
+          value={location}
+          onChange={handleLocationChange}
+          placeholder="location"
+        />
+      </div>
+      <div className="flex">
+        <input
+          type="text"
+          id="searchQueryInput"
+          name="text"
+          autoComplete="off"
+          value={query}
+          onChange={handleQueryChange}
+          placeholder="for..."
+        />
+        <button type="submit" id="searchButton">
+          🔍
+        </button>
+      </div>
+    
+      
     </form>
   );
 }

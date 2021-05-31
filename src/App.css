@@ -1,16 +1,4 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -18,10 +6,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  padding: 3vw;
 }
 
 .App-link {
@@ -36,3 +22,100 @@
     transform: rotate(360deg);
   }
 }
+
+
+.flex {
+  display: flex;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.searchTitle {
+  font-size: 2em;
+  font-weight: 500;
+  padding-right: .5vw;
+  padding-left: .5vw;
+}
+
+#searchLocationInput {
+  font-size: 2em;
+  font-weight: 500;
+  max-width: 300px;
+}
+
+#searchQueryInput {
+  font-size: 3em;
+  font-weight: 600;
+  max-width: 700px;
+}
+
+#searchButton {
+  font-size: 3em;
+  font-weight: 600;
+  background-color: #282c34;
+  border: 0;
+}
+
+
+input[type=text], select {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.resultItem {
+  margin-bottom: 1.5vh;
+  display: flex;
+  align-items: center
+}
+
+.resultItem .count {
+  margin-right: 1vw;
+  font-weight: 200;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.resultItem .title {
+  margin-right: 1vw;
+  font-weight: 600;
+  font-size: 2.5em
+}
+
+.resultItem .address {
+  font-weight: 200;
+  font-size: 1em;
+}
+
+.resultItem .ratingContainer {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
