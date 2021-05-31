@@ -10,12 +10,12 @@ function SearchBar(props) {
       return;
     }
     props.search(query);
-    // setQuery("");
+    setQuery("");
   }
 
 
   function handleChange(e) {
-    // setQuery(e.target.value);
+    setQuery(e.target.value);
   }
 
   return (
