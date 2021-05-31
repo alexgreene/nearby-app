@@ -6,12 +6,6 @@ import React, { useState } from "react";
 
 function App() {
 
-  // const defaultResults = [
-  //   { id: "0", business: "Pineapple King", address: "Irving St", rating: 4.5 },
-  //   { id: "1", business: "Lucca Deli", address: "20th Ave", rating: 4.15 },
-  //   { id: "2", business: "Arizmendi", address: "9th Ave", rating: 4.6 }
-  // ];
-
   const [results, setResults] = useState([]);
 
   const resultItems = results
@@ -23,14 +17,14 @@ function App() {
       rating={result.rating} />
   ));
 
-  function search(query) {
-    //performSearch(query);
+  function search(query, location) {
+    console.log(location)
     axios.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search", {
       headers: {
         Authorization: "Bearer " + process.env.REACT_APP_API_KEY
     },
       params: {
-        "location": "94122",
+        "location": location,
         "term": query
       }
     })
@@ -42,7 +36,6 @@ function App() {
           address: r['location']['address1'], rating: r['rating']
         }))
       setResults(converted)
-      console.log(res)
     })
     // .catch((err) => {
     //   console.log ('error')

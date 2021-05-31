@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function SearchBar(props) {
   const [query, setQuery] = useState('');
+  const [location, setLocation] = useState('');
 
 
   function handleSearch(e) {
@@ -9,18 +10,25 @@ function SearchBar(props) {
     if (!query.trim()) {
       return;
     }
-    props.search(query);
+
+    if (!location.trim()) {
+      return;
+    }
+    props.search(query, location);
     setQuery("");
   }
 
 
-  function handleChange(e) {
+  function handleQueryChange(e) {
     setQuery(e.target.value);
+  }
+
+  function handleLocationChange(e) {
+    setLocation(e.target.value);
   }
 
   return (
     <form onSubmit={handleSearch}>
-
       <input
         type="text"
         id="search-query-input"
@@ -28,7 +36,18 @@ function SearchBar(props) {
         name="text"
         autoComplete="off"
         value={query}
-        onChange={handleChange}
+        onChange={handleQueryChange}
+        placeholder="query"
+      />
+      <input
+        type="text"
+        id="search-location-input"
+        className="input input__lg"
+        name="location"
+        autoComplete="off"
+        value={location}
+        onChange={handleLocationChange}
+        placeholder="location"
       />
       <button type="submit" className="btn btn__primary btn__lg">
         Search
