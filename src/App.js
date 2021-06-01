@@ -1,12 +1,14 @@
 import './App.css';
 import ResultItem from "./components/ResultItem"
 import SearchBar from "./components/SearchBar"
+import ErrorMessage from "./components/ErrorMessage"
 import axios from 'axios'
 import React, { useState } from "react";
 
 function App() {
 
   const [results, setResults] = useState([]);
+  const [error, setError] = useState("");
 
   const resultItems = results
   .map(result => (
@@ -49,10 +51,12 @@ function App() {
           image: r['image_url']
         }))
       setResults(converted)
+      setError("")
     })
-    // .catch((err) => {
-    //   console.log ('error')
-    // })
+    .catch((err) => {
+      console.log(err.response.data.error)
+      setError(err.response.data.error['description'])
+    })
   }
 
 
@@ -62,9 +66,17 @@ function App() {
 
         <SearchBar search={search} />
 
-        <div>
-          {resultItems}
-        </div>
+        { error &&
+            <ErrorMessage msg={error} />
+        }
+
+        { !error &&
+          <div>
+            {resultItems}
+          </div>
+        }
+
+        
 
       </header>
     </div>

@@ -52,7 +52,7 @@ function ResultItem(props) {
 			}
 
 			{ expanded &&
-				<img class="preview" src={props.image}></img>
+				<img alt={"Photo of " + props.name} className="preview" src={props.image}></img>
 			}
 		</div>
 	</div>
