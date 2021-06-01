@@ -35,4 +35,10 @@ I chose to spend more time styling the app than expanding functionality. The goa
 I did also add an error message for searches that fail.
 
 
+#### Sketches I drew at the beginning of the project
+
+![IMG_9667](https://user-images.githubusercontent.com/271842/120261805-8257e200-c24d-11eb-986f-267a32685d05.jpg)
+![IMG_9668](https://user-images.githubusercontent.com/271842/120261812-84ba3c00-c24d-11eb-9e94-06963bfba420.jpg)
+
+
 
