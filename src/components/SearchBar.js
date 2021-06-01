@@ -15,7 +15,6 @@ function SearchBar(props) {
       return;
     }
     props.search(query, location);
-    setQuery("");
   }
 
 
@@ -28,7 +27,7 @@ function SearchBar(props) {
   }
 
   return (
-    <form className="" onSubmit={handleSearch}>
+    <form className="searchForm" onSubmit={handleSearch}>
       <div className="flex">
         <div className="searchTitle">Search</div>
         <input

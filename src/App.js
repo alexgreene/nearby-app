@@ -30,12 +30,12 @@ function App() {
       }
     })
     .then((res) => {
-      let topTen = res.data["businesses"].slice(0, 20)
-      let converted = topTen.map((r, index) => ({ 
-          index: index,
+      let converted = res.data["businesses"].map((r, index) => ({ 
+          index: index+1,
           id: r['id'], 
           business: r['name'], 
-          address: r['location']['address1'], rating: r['rating']
+          address: r['location']['address1'], 
+          rating: r['rating']
         }))
       setResults(converted)
     })
