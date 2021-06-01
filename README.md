@@ -5,6 +5,8 @@
 This project requires the Yelp API key be placed in a .env file in the nearby-app folder at the top level, with just the following line inside:
 REACT_APP_API_KEY=place_key_here
 
+To Run: npm start
+
 ### Description:
 
 Nearby App allows a person to search for businesses nearby. Because "nearby" is the focus of the search, I chose to sort by distance from the location that is searched. I chose to highlight the distance in meters for the same reason.
