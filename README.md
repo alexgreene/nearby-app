@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Nearby App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###Setup:
 
-## Available Scripts
+This project requires the Yelp API key be placed in a .env file in the nearby-app folder at the top level, with just the following line inside:
+REACT_APP_API_KEY=place_key_here
 
-In the project directory, you can run:
+###Description:
 
-### `yarn start`
+Nearby App allows a person to search for businesses nearby. Because "nearby" is the focus of the search, I chose to sort by distance from the location that is searched. I chose to highlight the distance in meters for the same reason.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When you tap on the name of one of the businesses, the app presents you with some more information, inline. I chose to keep everything inline rather than presenting a modal or a separate page for two reasons:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. The scope of this project was to be small
+2. The amount of additional information that could be surfaced within this scope was not enough to warrant an entirely separate view.
 
-### `yarn test`
+The further information that is revealed when tapped is the following -- 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. The address -- I believe if the user is trying to find which businesses are the closest, the distance in meters is the most helpful data point. It's easy to scroll through these results and compare them by that single number. Addresses are much more difficult to scan while scrolling, so I hid them.
 
-### `yarn build`
+2. The phone number -- Again, you'd only need the phone number if you were interested, so this does not need be shown immediately.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. The rating -- Initially I had the rating shown immediately, but I chose to hide it until the business is expanded because:
+- Ratings are not relevant to every search, and can sometimes distract. I sometimes prefer to avoid relying on Yelp ratings.
+- You can just expand the businesses you're interested in and scroll between them to compare ratings, without being distracted by the ratings from every single search result.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*I chose to add a star for businesses that had a rating of 4.5 or above, in addition to scaling the orange bar based next to the rating, based on the rating. This adds a bit of visual interest while also being helpful if you do choose to compare by rating.*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. The primary photo from Yelp.
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I chose to spend more time styling the app than expanding functionality. The goal of the app was to help people find businesses nearby, and I believed making that basic information more readable was more helpful to someone than anything else.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I did also add an error message for searches that fail.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
