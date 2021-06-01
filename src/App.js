@@ -15,11 +15,13 @@ function App() {
       key={result.id} 
       name={result.business} 
       address={result.address} 
-      rating={result.rating} />
+      rating={result.rating}
+      price={result.price}
+      categories={result.categories} />
   ));
 
   function search(query, location) {
-    console.log(location)
+    
     axios.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search", {
       headers: {
         Authorization: "Bearer " + process.env.REACT_APP_API_KEY
@@ -35,9 +37,12 @@ function App() {
           id: r['id'], 
           business: r['name'], 
           address: r['location']['address1'], 
-          rating: r['rating']
+          rating: r['rating'],
+          price: r['price'],
+          categories: r['categories'].map(c => (c['title']))
         }))
       setResults(converted)
+      console.log(converted)
     })
     // .catch((err) => {
     //   console.log ('error')

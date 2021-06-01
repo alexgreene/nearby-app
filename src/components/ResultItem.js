@@ -14,13 +14,18 @@ function ResultItem(props) {
 	    	</div>
 	    	<div className="address">{props.address}</div>
 	    	<div className="detailsContainer">
-	    		<div className="price">$$$</div>
-		    	<div className="categories">Coffee & Tea</div>
+	    		{ props.price &&
+		    		<div className="price">{props.price}</div>
+		    	}
+		    	<div className="categories">{props.categories.join(", ")}</div>
 		    	
 			</div>
 			<div className="ratingsContainer">
 		    	<div className="rating">{props.rating}</div>
 				<div className="ratingsBar" style={{width: ratingsBarWidth + "px"}}></div>
+				{ props.rating >= 4.5 &&
+		    		<div className="star">★</div>
+		    	}
 			</div>
 		</div>
 	</div>
