@@ -17,7 +17,10 @@ function App() {
       address={result.address} 
       rating={result.rating}
       price={result.price}
-      categories={result.categories} />
+      categories={result.categories}
+      phone={result.phone} 
+      distance={result.distance}
+      image={result.image}/>
   ));
 
   function search(query, location) {
@@ -28,7 +31,8 @@ function App() {
     },
       params: {
         "location": location,
-        "term": query
+        "term": query,
+        "sort_by": "distance"
       }
     })
     .then((res) => {
@@ -39,10 +43,12 @@ function App() {
           address: r['location']['address1'], 
           rating: r['rating'],
           price: r['price'],
-          categories: r['categories'].map(c => (c['title']))
+          categories: r['categories'].map(c => (c['title'])),
+          phone: r['phone'],
+          distance: r['distance'],
+          image: r['image_url']
         }))
       setResults(converted)
-      console.log(converted)
     })
     // .catch((err) => {
     //   console.log ('error')

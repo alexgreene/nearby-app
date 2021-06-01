@@ -97,9 +97,25 @@ input[type=text], select {
   font-size: 2.5em
 }
 
+.resultItem .addressContainer {
+  display: flex;
+}
+
+.resultItem .distance {
+  font-weight: 400;
+  font-size: 1em;
+}
+
 .resultItem .address {
   font-weight: 200;
   font-size: 1em;
+  margin-left: 0.5vw;
+}
+
+.resultItem .phone {
+  font-weight: 300;
+  font-size: 1em;
+  margin-left: 0.5vw;
 }
 
 .resultItem .detailsContainer {
@@ -143,17 +159,19 @@ input[type=text], select {
 
 .wrap-stack {
   flex-wrap: wrap;
+  align-items: center;
+
 }
 
+.expander {
+  margin-top: 2vh;
+  opacity: 0.5;
+}
 
-
-
-
-
-
-
-
-
+.preview {
+  height: 10vh;
+  margin-right: 1.5vw;
+}
 
 
 

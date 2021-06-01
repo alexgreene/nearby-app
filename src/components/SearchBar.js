@@ -7,9 +7,6 @@ function SearchBar(props) {
 
   function handleSearch(e) {
     e.preventDefault();
-    if (!query.trim()) {
-      return;
-    }
 
     if (!location.trim()) {
       return;
@@ -36,7 +33,7 @@ function SearchBar(props) {
           name="location"
           value={location}
           onChange={handleLocationChange}
-          placeholder="location"
+          placeholder="address / zip"
         />
       </div>
       <div className="flex">
@@ -47,7 +44,7 @@ function SearchBar(props) {
           autoComplete="off"
           value={query}
           onChange={handleQueryChange}
-          placeholder="for..."
+          placeholder="for everything nearby"
         />
         <button type="submit" id="searchButton">
           🔍
